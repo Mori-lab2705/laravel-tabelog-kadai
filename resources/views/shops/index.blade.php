@@ -28,7 +28,7 @@
                          <div class="col-12">
                              <p class="nagoyameshi-shop-label mt-2">
                                  {{$shop->name}}<br>
-                                 <label>￥{{$shop->price}}</label>
+                                 <label>￥{{$shop->price}}</label> 
                              </p>
                          </div>
                      </div>

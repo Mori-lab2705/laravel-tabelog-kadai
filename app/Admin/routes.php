@@ -18,5 +18,6 @@ Route::group([
     $router->resource('categories', CategoryController::class);
     $router->resource('shops', ShopController::class);
     $router->resource('users', UserController::class);
+    $router->post('shops/import', [ShopController::class, 'csvImport']);
 
 });

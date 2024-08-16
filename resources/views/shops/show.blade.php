@@ -14,7 +14,7 @@
          <div class="col">
              <div class="d-flex flex-column">
                  <h1 class="">
-                     {{$shop->name}}
+                     {{$shop->n}}
                  </h1>
                  <p class="">
                      {{$shop->description}}
@@ -49,7 +49,7 @@
          </div>
 
           <div class="form-group row">
-             <!-- 今回の課題 -->
+             <!-- 今回の課題 -->　
                 @auth
                     <div class="row">
                         <div class="offset-md-5 col-md-5">

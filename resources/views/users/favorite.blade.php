@@ -9,32 +9,34 @@
         <hr>
 
         <div class="row">
-            @foreach ($favorites as $fav)
-            <div class="col-md-7 mt-2">
-                <div class="d-inline-flex">
-                    <a href="{{route('shops.show', $fav->favoriteable_id)}}" class="w-25">
-                         @if (App\Models\Shop::find($fav->favoriteable_id)->image !== "")
-                         <img src="{{ asset(App\Models\Shop::find($fav->favoriteable_id)->image) }}" class="img-fluid w-100">
-                         @else
-                         <img src="{{ asset('img/dummy.png') }}" class="img-fluid w-100">
-                         @endif
+             @foreach ($favorites as $fav)
+             <div class="col-md-7 mt-2">
+                 <div class="d-inline-flex">
+                     <a href="{{route('shops.show', $fav->favoriteable_id)}}" class="w-25">
+                        @if (App\Models\Shop::find($fav->favoriteable_id)->image !== "")
+                        <img src="{{ asset(App\Models\Shop::find($fav->favoriteable_id)->image) }}" class="img-fluid w-100">
+                        @else
+                        <img src="{{ asset('img/dummy.png') }}" class="img-fluid w-100">
+                        @endif
                     </a>
-                    <div class="container mt-3">
-                        <h5 class="w-100 nagoyameshi-favorite-items-text">{{App\Models\Shop::find($fav->favoriteable_id)->name}}</h5>
-                        <h6 class="w-100 samuraimart-favorite-item-text">&yen;{{App\Models\shop::find($fav->favoriteable_id)->price}}</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex align-items-center justify-content-end">
-                <a href="{{ route('shops.favorite', $fav->favoriteable_id) }}" class="nagoyameshi-favorite-item-delete">
-                    削除
-                </a>
-            </div>
-            <div class="col-md d-flex align-items-center-end">
-                <button type="submit" class="btn nagoyameshi-favorite-add-cart">予約する </button>
-            </div>
-            @endforeach
-        </div>
+                     <div class="container mt-3">
+                         <h5 class="w-100 samuraimart-favorite-item-text">{{App\Models\Shop::find($fav->favoriteable_id)->name}}</h5>
+                         <h6 class="w-100 samuraimart-favorite-item-text">&yen;{{App\Models\Shop::find($fav->favoriteable_id)->price}}</h6>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-2 d-flex align-items-center justify-content-end">
+                 <a href="{{ route('shops.favorite', $fav->favoriteable_id) }}" class="samuraimart-favorite-item-delete">
+                     削除
+                 </a>
+             </div>
+             <div class="col-md-3 d-flex align-items-center justify-content-end">
+               <a href="{{ route('shops.show', $fav->favoriteable_id) }}">
+                <button>予約する</button>
+               </a>
+             </div>
+             @endforeach
+         </div>
 
         <hr>
     </div>

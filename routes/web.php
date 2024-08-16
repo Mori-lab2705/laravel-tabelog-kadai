@@ -32,7 +32,9 @@ Route::controller(UserController::class)->group(function () {
    
 });
 
+
 Route::post('reservations', [ReservationController::class, 'store'])->name('reservations.store'); 
+Route::get('/users/{userId}/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
 Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');
 Route::get('shops/{shop}/favorite', [ShopController::class, 'favorite'])->name('shops.favorite'); 
@@ -41,3 +43,7 @@ Route::resource('shops', ShopController::class)->middleware(['auth', 'verified']
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/subscription', function () {
+    return view('subscription');
+})->middleware(['auth'])->name('subscription');

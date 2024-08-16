@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Shop;
 
 class ReservationController extends Controller
 {
@@ -31,6 +33,15 @@ class ReservationController extends Controller
         $reservation->save();
 
         return back();
+    }
+
+    public function index($user_id)
+    {
+        $user = Auth::user();
+        $reservations = $user->reservations;
+        
+
+        return view('reservations.index', compact('user', 'reservations', )); 
     }
 
    

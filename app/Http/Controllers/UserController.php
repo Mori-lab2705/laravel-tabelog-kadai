@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
+
 class UserController extends Controller
 {
     
@@ -83,8 +84,9 @@ class UserController extends Controller
         $user =Auth::user();
 
         $favorites = $user->favorites(Shop::class)->get();
+        $reservations = $user->reservations()->get();
 
-        return view('users.favorite', compact('favorites'));
+        return view('users.favorite', compact('favorites', 'reservations'));
     }
 
     public function destroy(Request $request)

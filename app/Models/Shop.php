@@ -11,6 +11,17 @@ class Shop extends Model
 {
     use HasFactory, Favoriteable, Sortable;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'category_id',
+        'image',
+        'recommend_flag',
+        'carriage_flag',
+    ];
+
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -24,5 +35,10 @@ class Shop extends Model
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
