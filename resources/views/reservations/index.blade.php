@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
-
-            
+@section('content')            
             <div class="row">
               <form method="GET" action="{{ route('reservations.store') }}">
                 @foreach ($reservations as $reservation)

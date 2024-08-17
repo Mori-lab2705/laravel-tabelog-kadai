@@ -35,6 +35,11 @@
                 <button>予約する</button>
                </a>
              </div>
+             <div class="col-md-3 d-flex align-items-center justify-content-end">
+               <a href="{{ route('mypage.update', $fav->favoriteable_id) }}">
+                <button>テスト</button>
+               </a>
+             </div>
              @endforeach
          </div>
 
