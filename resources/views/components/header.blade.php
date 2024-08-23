@@ -3,8 +3,8 @@
      <a class="navbar-brand" href="{{ url('/') }}">
        {{ config('app.name', 'Laravel') }}
      </a>
-      <form action="{{ url('/shops') }}" method="GET">
-        <input type="text" name="keyword" placeholder="商品名で検索">
+      <form action="{{ route('shops.index') }}" method="GET">
+        <input type="text" name="search" placeholder="商品名を入力">
         <button type="submit">検索</button>
       </form>
      

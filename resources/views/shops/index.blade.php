@@ -5,6 +5,10 @@
       <div class="col-2">
          @component('components.sidebar', ['categories' => $categories,])
          @endcomponent
+         <form action="{{ route('shops.index') }}" method="GET">
+                <input type="text" name="search" placeholder="商品名を入力">
+                <button type="submit">検索</button>
+         </form>
       </div>
      <div class="col-9"> 
          <div class="container">

@@ -25,6 +25,15 @@ class ShopController extends Controller
             $category = null;
         }
 
+        $query = Shop::query();
+
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->input('search') . '%');
+        }
+
+        $shops = $query->paginate(10);
+        $shops->appends(['search' => $request->input('search')]);
+
         $categories = Category::all();
 
         return view('shops.index', compact('shops', 'category', 'total_count','categories'));

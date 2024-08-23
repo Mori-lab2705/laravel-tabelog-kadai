@@ -32,9 +32,7 @@
                                         {{ $reservation->shop_name }}
                                         <a href="{{ route('reservations.edit', $reservation->id) }}">予約のキャンセル</a>
                                     </li>
-                                </form>
-                                
-                                   
+                                </form> 
                             </div>
                         </div>
                     </div>
