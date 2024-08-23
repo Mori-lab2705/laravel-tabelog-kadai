@@ -20,7 +20,7 @@ class ShopController extends Controller
             $total_count = Shop::where('category_id', $request->category)->count();
             $category = Category::find($request->category);
         } else{
-            $shops = Shop::sortable()->paginate(2);
+            $shops = Shop::sortable()->paginate(15);
             $total_count = "";
             $category = null;
         }
@@ -128,5 +128,8 @@ class ShopController extends Controller
 
         return back();
     }
+
+  
+    
 }
  

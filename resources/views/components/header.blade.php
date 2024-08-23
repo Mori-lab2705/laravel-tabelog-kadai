@@ -3,17 +3,11 @@
      <a class="navbar-brand" href="{{ url('/') }}">
        {{ config('app.name', 'Laravel') }}
      </a>
-     <form class="row g-1">
-       <div class="col-auto">
-         <input class="form-control nagoyameshi-header-search-input">
-       </div>
-       <div class="col-auto">
-         <button type="submit" class="btn nagoyameshi-header-search-button"><i class="fas fa-search nagoyameshi-header-search-icon"></i></button>
-       </div>
-     </form>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-       <span class="navbar-toggler-icon"></span>
-     </button>
+      <form action="{{ url('/shops') }}" method="GET">
+        <input type="text" name="keyword" placeholder="商品名で検索">
+        <button type="submit">検索</button>
+      </form>
+     
  
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <!-- Right Side Of Navbar -->

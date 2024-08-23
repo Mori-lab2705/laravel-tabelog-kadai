@@ -10,9 +10,10 @@
          <div class="container">
              @if ($category !== null)
                  <a href="{{ route('shops.index') }}">トップ</a> > <a href="#">{{ $category->major_category_name }}</a> > {{ $category->name }}
-                 <h1>{{ $category->name }}の商品一覧{{$total_count}}件</h1>
+                 <h1>{{ $category->name }}の商品一覧{{$total_count}}件</h1> 
              @endif
          </div>
+         
          <div class="container mt-4">
              <div class="row w-100">
                  @foreach($shops as $shop)

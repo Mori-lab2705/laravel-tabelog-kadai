@@ -35,6 +35,9 @@ Route::controller(UserController::class)->group(function () {
 
 Route::post('reservations', [ReservationController::class, 'store'])->name('reservations.store'); 
 Route::get('/users/{userId}/reservations', [ReservationController::class, 'index'])->name('reservations.index');
+Route::get('/users/{userId}/reservations/edit',  [ReservationController::class, 'edit'])->name('reservations.edit');
+Route::delete('/reservations/{id}', [ReservationController::class, 'destroy'])->name('reservations.destroy');
+
 
 Route::post('reviews', [ReviewController::class, 'store'])->name('reviews.store');
 Route::get('shops/{shop}/favorite', [ShopController::class, 'favorite'])->name('shops.favorite'); 
@@ -46,4 +49,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/subscription', function () {
     return view('subscription');
-})->middleware(['auth'])->name('subscription');
+})->middleware(['auth'])->name('subscription'); 
+

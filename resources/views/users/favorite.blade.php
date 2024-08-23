@@ -35,8 +35,31 @@
                 <button>予約する</button>
                </a>
              </div>
+             @auth
+                    <div class="row">
+                        <div class="offset-md-5 col-md-5">
+                        <form method="post" action="{{ route('reservations.store') }}">
+                            @csrf
+                            <label for ="quantity" class="number">予約人数</label>
+                            <div class="col-sm-10">
+                                <input type="number" id="number" name="number" min="1" value="" class="form-control w-28">
+                            </div>
+                            <label for="date">予約日:</label> 
+                            <input type="date" name="date" class="form-control m-2">
+                            <input type="hidden" name="shop" value="{{$fav->id}}">
+                            <button type="submit" class="btn nagoyameshi-submit-button ml-2">予約を追加</button>
+                        </form>
+                        </div>
+                    </div>
+                @endauth
+
+
+
+
+
              <div class="col-md-3 d-flex align-items-center justify-content-end">
-               <a href="{{ route('mypage.update', $fav->favoriteable_id) }}">
+               <a href="{{ route('reservations.index', $fav->favoriteable_id) }}">
+
                 <button>テスト</button>
                </a>
              </div>

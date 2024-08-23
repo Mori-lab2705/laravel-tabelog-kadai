@@ -42,7 +42,24 @@ class ReservationController extends Controller
         
 
         return view('reservations.index', compact('user', 'reservations', )); 
+        
     }
 
-   
+    public function edit($id)
+    { 
+        $reservation = Reservation::findOrFail($id);
+
+        return view('reservations.edit', compact('reservation'));
+    }
+
+    public function destroy($id)
+    {
+        $reservation = Reservation::findOrFail($id);
+        $reservation->delete();
+
+        return redirect()->route('reservations.edit')->with('success', '予約がキャンセルされました。');
+    }
+    
+
+      
 }
