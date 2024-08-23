@@ -16,25 +16,25 @@ class ShopController extends Controller
     public function index(Request $request)
     {
         if ($request->category !== null) {
-            $shops = Shop::where('category_id', $request->category)->sortable()->paginate(15);
+            $shops = Shop::where('category_id', $request->category)->sortable();
             $total_count = Shop::where('category_id', $request->category)->count();
             $category = Category::find($request->category);
         } else{
-            $shops = Shop::sortable()->paginate(15);
+            $shops = Shop::sortable();
             $total_count = "";
             $category = null;
         }
 
-        $query = Shop::query();
+        $categories = Category::all();
+
+        $query = $shops;
 
         if ($request->filled('search')) {
             $query->where('name', 'like', '%' . $request->input('search') . '%');
         }
 
-        $shops = $query->paginate(10);
+        $shops = $query->paginate(15);
         $shops->appends(['search' => $request->input('search')]);
-
-        $categories = Category::all();
 
         return view('shops.index', compact('shops', 'category', 'total_count','categories'));
     }
