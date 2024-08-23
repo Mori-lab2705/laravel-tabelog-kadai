@@ -57,7 +57,7 @@ class ReservationController extends Controller
         $reservation = Reservation::findOrFail($id);
         $reservation->delete();
 
-        return redirect()->route('reservations.edit')->with('success', '予約がキャンセルされました。');
+        return redirect('/users/userID/reservations')->with('success', '予約がキャンセルされました。');
     }
     
 

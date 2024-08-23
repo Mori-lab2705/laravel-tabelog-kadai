@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
@@ -48,6 +49,17 @@ Auth::routes(['verify' => true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/subscription', function () {
-    return view('subscription');
+    return view('subscription', [
+        'intent' => auth()->user()->createSetupIntent()
+    ]);
 })->middleware(['auth'])->name('subscription'); 
+
+Route::post('/user/subscribe', function (Request $request) {
+    $request->user()->newSubscription(
+        'default', 'price_1PoQmuGRKUFslzadkW2kZnES'
+    )->create($request->paymentMethodId);
+
+    return redirect('/home');
+
+})->middleware(['auth'])->name('subscribe.post');
 
