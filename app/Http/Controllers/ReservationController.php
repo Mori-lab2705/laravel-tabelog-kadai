@@ -20,6 +20,11 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
+        if (! $request->user()->subscribed('default')){
+
+            return redirect('subscription');
+        }
+        
         $request->validate([
             'number'  => 'required',
             'date' => 'required'

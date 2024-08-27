@@ -61,13 +61,15 @@
   }
   
   body {
-    font-family: YuGo;
+    font-family: 'Arial', sans-serif;
     font-size: 14px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
     letter-spacing: 0.11px;
+    background-color: #ed8b132a;
+    color: #191212;
   }
   
   caption {
@@ -93,7 +95,7 @@
  
 
 .nagoyameshi-login-input {
-    border-radius: 2px;
+    border-radius: 20px;
     border: solid 1px #b2b2b2;
     background-color: #ffffff;
 }
@@ -170,8 +172,8 @@
 
 .nagoyameshi-favorite-button {
   border-radius: 2px;
-  border: solid 1px #0fbe9f;
-  background-color: #ffffff;
+  border: solid 1px #9ebe0f;
+  background-color: #ffffff57;
 }
 
 .text-favorite {

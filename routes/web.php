@@ -50,7 +50,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/subscription', function () {
     return view('subscription', [
-        'intent' => auth()->user()->createSetupIntent()
+        'intent' => auth()->user()->createSetupIntent(),
+        'isSubscribed' => auth()->user()->subscribed('default')
     ]);
 })->middleware(['auth'])->name('subscription'); 
 
@@ -62,4 +63,10 @@ Route::post('/user/subscribe', function (Request $request) {
     return redirect('/home');
 
 })->middleware(['auth'])->name('subscribe.post');
+
+Route::post('/subscription/cancel', function (Request $request) {
+    $request->user()->subscription('default')->cancelNow();
+    return back();
+})->middleware(['auth'])->name('stripe.cancel');
+
 

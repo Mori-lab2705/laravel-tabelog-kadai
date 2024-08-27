@@ -5,7 +5,15 @@
 
    
 <div class="container">
+    <h2>あなたは{{ $isSubscribed ? "有料" : "無料" }}会員です。</h2>
 
+    @if ($isSubscribed)
+        契約のキャンセルはこちらから
+        <form method="POST" action="{{route('stripe.cancel') }}">
+            @csrf
+            <button class="btn btn-success mt-2">キャンセルする</button>
+        </form>
+    @else
     <div class="p-4 bg-white border-b border-gray-200">
         <h2>サブスクリプション</h2>
         <form id="setup-form" action="{{ route('subscribe.post') }}" method="post">
@@ -17,6 +25,7 @@
             </button>
         </form>
     </div>
+    @endif
 
 </div>
 
