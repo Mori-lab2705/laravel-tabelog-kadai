@@ -32,10 +32,10 @@ class ShopController extends AdminController
     {
         $grid = new Grid(new Shop());
 
-        $grid->column('id', __('Id'));
-        $grid->column('name', __('Name'));
-        $grid->column('description', __('Description'));
-        $grid->column('price', __('Price'));
+        $grid->column('id', __('Id'))->sortable();
+        $grid->column('name', __('Name'))->sortable();
+        $grid->column('description', __('Description'))->sortable();
+        $grid->column('price', __('Price'))->sortable();
         $grid->column('category.name', __('Category Name'));
         $grid->column('image', __('Image'))->image();
         $grid->column('recommend_flag', __('Recommend Flag'));

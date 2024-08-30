@@ -131,8 +131,13 @@ class ShopController extends Controller
         
     }
 
-    public function favorite(Shop $shop)
+    public function favorite(Shop $shop, Request $request)
     {
+        if (! $request->user()->subscribed('default')){
+
+            return redirect('subscription');
+        }
+
         Auth::user()->togglefavorite($shop);
 
         return back();

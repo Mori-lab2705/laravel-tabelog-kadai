@@ -28,7 +28,7 @@ class ReservationController extends Controller
         $request->validate([
             'number'  => 'required',
             'date' => 'required'
-        ]);
+        ]);    
 
         $reservation = new Reservation();
         $reservation->date = $request->input('date');

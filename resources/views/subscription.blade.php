@@ -5,7 +5,7 @@
 
    
 <div class="container">
-    <h2>あなたは{{ $isSubscribed ? "有料" : "無料" }}会員です。</h2>
+    <h2>あなたは{{ $isSubscribed ? "有料" : "無料" }}会員です。<月額300円(税込み)></h2>
 
     @if ($isSubscribed)
         契約のキャンセルはこちらから
@@ -25,7 +25,7 @@
             </button>
         </form>
     </div>
-    @endif
+    @endif 
 
 </div>
 

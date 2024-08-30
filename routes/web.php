@@ -67,6 +67,6 @@ Route::post('/user/subscribe', function (Request $request) {
 Route::post('/subscription/cancel', function (Request $request) {
     $request->user()->subscription('default')->cancelNow();
     return back();
-})->middleware(['auth'])->name('stripe.cancel');
+})->middleware(['auth'])->name('stripe.cancel'); 
 
 

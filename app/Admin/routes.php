@@ -4,6 +4,7 @@ use Illuminate\Routing\Router;
 use App\Admin\Controllers\CategoryController;
 use App\Admin\Controllers\ShopController;
 use App\Admin\Controllers\UserController;
+use App\Admin\Controllers\SubscriptionController;
 
 Admin::routes();
 
@@ -18,6 +19,7 @@ Route::group([
     $router->resource('categories', CategoryController::class);
     $router->resource('shops', ShopController::class);
     $router->resource('users', UserController::class);
+    $router->resource('subscriptions', SubscriptionController::class);
     $router->post('shops/import', [ShopController::class, 'csvImport']);
 
 });

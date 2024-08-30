@@ -212,3 +212,17 @@
   color: #ffffff;
   background-color: #d94b0e;
 }
+
+.long-hr{
+  width: 100%; /* 80%の幅に設定 */
+}
+
+.small-image {
+  width: 200px; /* 幅を200pxに設定 */
+  height: auto; /* アスペクト比を維持 */
+}
+
+.img-fluid{
+  width: 200px; /* 幅を200pxに設定 */
+  height: auto; /* アスペクト比を維持 */
+}
