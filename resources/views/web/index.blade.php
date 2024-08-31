@@ -15,19 +15,20 @@
             <div class="row">
                 @foreach ($recommend_shops as $recommend_shop)
                 <div class="col-md-3">
-                <div class="card mb-4">
-                    <a href="{{ route('shops.show', $recommend_shop) }}">
-                        @if ($recommend_shop->image !== "")
-                        <img src="{{ asset($recommend_shop->image) }}" class="img-thumbnail">
-                        @else
-                        <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
-                        @endif
-                    </a>
-                    <div class="row">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $recommend_shop->name }}</h5>
-                            <p class="card-text">￥{{ $recommend_shop->price }}</p>
-                            <a href="{{ route('shops.show', $recommend_shop) }}" class="btn btn-primary">詳細を見る</a>
+                    <div class="card mb-4">
+                        <a href="{{ route('shops.show', $recommend_shop) }}">
+                            @if ($recommend_shop->image !== "")
+                            <img src="{{ asset($recommend_shop->image) }}" class="img-thumbnail">
+                            @else
+                            <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                            @endif
+                        </a>
+                        <div class="row">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $recommend_shop->name }}</h5>
+                                <p class="card-text">￥{{ $recommend_shop->price }}</p>
+                                <a href="{{ route('shops.show', $recommend_shop) }}" class="btn btn-primary">詳細を見る</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,7 +57,6 @@
                 </div>
             </div>
             @endforeach
-        </div>
     </div>                  
 </div>
 @endsection
