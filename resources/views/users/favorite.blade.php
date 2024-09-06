@@ -45,7 +45,7 @@
                                 <label for="date">予約日</label>
                                 <input type="date" name="date" class="form-control">
                             </div>
-                            <input type="hidden" name="shop" value="{{$fav->id}}">
+                            <input type="hidden" name="shop" value="{{$fav->favoriteable_id}}">
                             <button type="submit" class="btn btn-primary">予約を追加</button>
                         </form>
                     </div>
