@@ -25,7 +25,7 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">{{optional(App\Models\Shop::find($fav->favoriteable_id))->name}}</h5>
-                                    <p class="card-text">{{optional(App\Models\Shop::find($fav->favoriteable_id))->price}}</p>
+                                    <p class="card-text">¥{{optional(App\Models\Shop::find($fav->favoriteable_id))->price}}(税込)</p>
                                     <a href="{{ route('shops.favorite', $fav->favoriteable_id) }}" class="btn btn-danger">削除</a>
                                 </div>
                             </div>
