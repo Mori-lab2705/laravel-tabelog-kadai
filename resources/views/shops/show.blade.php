@@ -14,7 +14,7 @@
          <div class="col">
              <div class="d-flex flex-column">
                  <h1 class="">
-                     {{$shop->n}}
+                     {{$shop->name}}
                  </h1>
                  <p class="">
                      {{$shop->description}}

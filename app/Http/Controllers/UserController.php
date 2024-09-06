@@ -82,6 +82,11 @@ class UserController extends Controller
     public function favorite()
     {
         $user =Auth::user();
+        if($user){
+            $favorites = $user->favorites();
+        }else{
+            return to_route('mypage');
+        }
 
         $favorites = $user->favorites(Shop::class)->get();
         $reservations = $user->reservations()->get();

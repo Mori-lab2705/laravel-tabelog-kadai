@@ -8,12 +8,14 @@
 
         <div class="row">
             @foreach ($favorites as $fav)
-                <div class="col-md-7 mt-2">
+                
+            
+            <div class="col-md-7 mt-2">
                     <div class="card mb-3"> <!-- カード間のスペーシング -->
                         <div class="row no-gutters">
                             <div class="col-md-4">
                                 <a href="{{route('shops.show', $fav->favoriteable_id)}}">
-                                    @if (App\Models\Shop::find($fav->favoriteable_id)->image)
+                                    @if (optional(App\Models\Shop::find($fav->favoriteable_id))->image)
                                         <img src="{{ asset(App\Models\Shop::find($fav->favoriteable_id)->image) }}" class="card-img">
                                     @else
                                         <img src="{{ asset('img/dummy.png') }}" class="card-img">
@@ -22,8 +24,8 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{App\Models\Shop::find($fav->favoriteable_id)->name}}</h5>
-                                    <p class="card-text">¥{{App\Models\Shop::find($fav->favoriteable_id)->price}}</p>
+                                    <h5 class="card-title">{{optional(App\Models\Shop::find($fav->favoriteable_id))->name}}</h5>
+                                    <p class="card-text">{{optional(App\Models\Shop::find($fav->favoriteable_id))->price}}</p>
                                     <a href="{{ route('shops.favorite', $fav->favoriteable_id) }}" class="btn btn-danger">削除</a>
                                 </div>
                             </div>

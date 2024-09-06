@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @endforeach 
             </div>
             <hr>
         </div>

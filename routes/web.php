@@ -9,6 +9,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\ReservationController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,8 @@ use App\Http\Controllers\ReservationController;
 |
 */
 
-Route::get('/', [WebController::class, 'index'])->name('top');
+
+Route::get('/', [WebController::class, 'index'])->name('top'); 
 
 Route::controller(UserController::class)->group(function () {
     Route::get('users/mypage', 'mypage')->name('mypage');
