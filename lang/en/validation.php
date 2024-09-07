@@ -150,6 +150,12 @@ return [
     'url' => 'The :attribute must be a valid URL.',
     'ulid' => 'The :attribute must be a valid ULID.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    'required' => ':attribute は必須です。',
+    'unique'   => ':attribute はすでに使用されています。',
+    'attributes' => [
+        'user_name' => 'ユーザー名',
+        'email'     => 'メールアドレス',
+    ],
 
     /*
     |--------------------------------------------------------------------------
