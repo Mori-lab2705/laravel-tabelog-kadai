@@ -40,6 +40,28 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function rules(Request $request)
+    {
+        return[
+            'name' => 'required',
+            'email' => [
+                'required',
+                'unique:users',
+            ],
+            ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'ユーザー名は必須です。',
+            'email.required' => 'メールアドレスは必須です。',
+            'email.unique' => 'メールアドレスはすでに登録されています。',
+        ];
+    }
+
+
+
     /**
      * Get a validator for an incoming registration request.
      *

@@ -33,7 +33,7 @@
  
                          @error('email')
                          <span class="invalid-feedback" role="alert">
-                             <strong>メールアドレスを入力してください</strong>
+                             <strong>{{ $message }}</strong>
                          </span>
                          @enderror
                      </div>
