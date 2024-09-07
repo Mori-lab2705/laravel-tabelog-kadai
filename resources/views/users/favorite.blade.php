@@ -45,6 +45,10 @@
                                 <label for="date">予約日</label>
                                 <input type="date" name="date" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label for ="time" class="number">予約時間</label>
+                                <input type="time" id="time" name="time" min="1" value="" class="form-control w-28">
+                            </div>
                             <input type="hidden" name="shop" value="{{$fav->favoriteable_id}}">
                             <button type="submit" class="btn btn-primary">予約を追加</button>
                         </form>

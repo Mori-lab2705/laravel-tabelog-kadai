@@ -27,11 +27,13 @@ class ReservationController extends Controller
         
         $request->validate([
             'number'  => 'required',
-            'date' => 'required'
+            'date' => 'required',
+            'time' => 'required'
         ]);    
 
         $reservation = new Reservation();
         $reservation->date = $request->input('date');
+        $reservation->time = $request->input('time');
         $reservation->number =$request->input('number');
         $reservation->shop_id = $request->input('shop');
         $reservation->user_id = Auth::user()->id;

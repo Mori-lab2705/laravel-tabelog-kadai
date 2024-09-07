@@ -61,6 +61,13 @@
                                 </div>
                                 <label for="date">予約日:</label> 
                                 <input type="date" name="date" class="form-control m-2">
+                                <label for ="time" class="time">予約時間</label>
+                                <div class="col-sm-10">
+                                    <input type="time" id="time" name="time" min="1" value="" class="form-control w-28">
+                                </div>
+
+                               
+
                                 <input type="hidden" name="shop" value="{{$shop->id}}">
                                 <button type="submit" class="btn nagoyameshi-submit-button ml-2">予約を追加</button>
                             </form>
